@@ -100,9 +100,31 @@ correlation = dataframe.corr()
 ### 🔥 Heatmap
 
 A heatmap is a graphical representation of data where individual values in a matrix are represented as colors. In correlation analysis, heatmaps help visualize the strength and direction of relationships between multiple variables at once, making it easier to spot strong positive or negative correlations.
-#Plotting Heatmap to see the correlation
+
 ```python
+#Plotting Heatmap to see the correlation
 import seaborn as sns
 plt.figure(figsize=(6,6))
 sns.heatmap(correlation,cbar=True,fmt='.1f',square=True,annot=True,annot_kws={'size':8},cmap='Blues')
 ```
+### 📊 Data Splitting
+
+```python
+# Separating features and target label
+features = dataframe.drop(['Houseprice'], axis=1)
+label = dataframe['Houseprice']
+
+print(features)
+print(label)
+
+# Splitting the data into training and testing sets
+from sklearn.model_selection import train_test_split
+
+X_train, x_test, Y_train, y_test = train_test_split(
+    features, label, test_size=0.2, random_state=2
+)
+
+print(features.shape, X_train.shape, x_test.shape)
+print(label.shape, Y_train.shape, y_test.shape)
+```
+
