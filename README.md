@@ -163,16 +163,11 @@ print("Testing Mean Absolute error:", mae_test)
 ```
 ### 📊 Results
 
-**Training Accuracy (R² Score):**  
-Measures how well the model fits the training data.
+**Training Accuracy (R² Score):** 
+0.9437  
+Mean Absolute Error: 0.1934
 
-```python
-print("Training R Square error: 0.9437")
-print("Training Mean Absolute error: 0.1934")
-```
-**Testing Accuracy (R² Score):**
-Measures how well the model generalizes to unseen data.
-```python
-print("Testing R Square error: 0.8338")
-print("Testing Mean Absolute error: 0.3109")
-```
+**Testing Accuracy (R² Score):**  
+0.8338  
+Mean Absolute Error: 0.3109
+
