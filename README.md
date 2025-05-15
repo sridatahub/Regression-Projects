@@ -56,5 +56,17 @@ import xgboost
 from xgboost import XGBRegressor
 from sklearn import metrics
 
+### 📥 Loading the Dataset
+
+```python
+# Importing dataset from sklearn
+from sklearn.datasets import fetch_california_housing
+dataset = fetch_california_housing()
+dataset
+# Loading dataset into a pandas DataFrame
+import pandas as pd
+dataframe = pd.DataFrame(dataset.data, columns=dataset.feature_names)
+dataframe.head()
+
 
 
