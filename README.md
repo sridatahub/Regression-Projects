@@ -31,4 +31,13 @@ This project uses the **California Housing Dataset**, derived from the 1990 U.S.
 ### 🎯 Target Variable
 
 - **MedHouseVal**: Median house value per block group, expressed in **$100,000s** — this is the value predicted by the model.
+### 🔧 Project Workflow
+
+1. Importing Dependencies & Dataset  
+2. Creating DataFrame  
+3. Data Exploration  
+4. Correlation Analysis  
+5. Data Splitting  
+6. Model Training & Evaluation  
+
 
