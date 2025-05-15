@@ -160,20 +160,14 @@ mae_test = metrics.mean_absolute_error(y_test, test_data_prediction)
 
 print("Testing R Square error:", r_score_test)
 print("Testing Mean Absolute error:", mae_test)
-
+```
+### 📊 Results
 ### 📊 Results
 
+**Training Accuracy (R² Score):**  
+Measures how well the model fits the training data.
+
 ```python
-# Training Accuracy (R² Score): Measures how well the model fits the training data
-print("Training R Square error: 0.943650140819218")
-print("Training Mean Absolute error: 0.1933648700612105")
-
-# Testing Accuracy (R² Score): Measures how well the model generalizes to unseen data
-from sklearn import metrics
-
-r_score = metrics.r2_score(y_test, test_data_prediction)
-mae = metrics.mean_absolute_error(y_test, test_data_prediction)
-
-print("Testing R Square error:", r_score)
-print("Testing Mean Absolute error:", mae)
+print("Training R Square error: 0.9437")
+print("Training Mean Absolute error: 0.1934")
 ```
