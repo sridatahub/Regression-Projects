@@ -58,11 +58,10 @@ from sklearn import metrics
 
 ### 📥 Loading the Dataset
 
-```python
 from sklearn.datasets import fetch_california_housing
 dataset = fetch_california_housing()
 dataset
-
+### 📥 Creating Pandas Dataframe
 import pandas as pd
 dataframe = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 dataframe.head()
