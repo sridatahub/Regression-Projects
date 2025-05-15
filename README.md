@@ -55,13 +55,13 @@ from sklearn.model_selection import train_test_split
 import xgboost
 from xgboost import XGBRegressor
 from sklearn import metrics
-
+```
 ### 📥 Loading the Dataset
-
+```python
 from sklearn.datasets import fetch_california_housing
 dataset = fetch_california_housing()
 dataset
-
+```
 ### 📥 Creating Pandas DataFrame
 
 ```python
@@ -69,11 +69,10 @@ import pandas as pd
 dataframe = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 dataframe.head()
 
-#Adding Label (Price) to the DataFrame
+#vAdding Label (Price) to the DataFrame
 dataframe['Houseprice'] = dataset.target
 dataframe.head()
-
-
+```
 ### 🔍 Data Exploration
 
 ```python
