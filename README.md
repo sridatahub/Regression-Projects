@@ -38,6 +38,23 @@ This project uses the **California Housing Dataset**, derived from the 1990 U.S.
 3. Data Exploration  
 4. Correlation Analysis  
 5. Data Splitting  
-6. Model Training & Evaluation  
+6. Model Training & Evaluation
+
+### 📦 Importing Dependencies
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import sklearn.datasets
+from sklearn.model_selection import train_test_split
+
+# Install XGBoost (if not already installed)
+!pip install xgboost
+
+import xgboost
+from xgboost import XGBRegressor
+from sklearn import metrics
+
 
 
