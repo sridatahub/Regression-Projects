@@ -69,7 +69,7 @@ import pandas as pd
 dataframe = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 dataframe.head()
 
-#vAdding Label (Price) to the DataFrame
+#Adding Label (Price) to the DataFrame
 dataframe['Houseprice'] = dataset.target
 dataframe.head()
 ```
@@ -84,4 +84,25 @@ print(dataframe.isnull().sum())
 
 # Looking at statistical measures of the dataset
 print(dataframe.describe())
+```
+### 🔗 Correlation Analysis
 
+Correlation measures the statistical relationship between two variables, indicating how one variable may change when the other does. It helps identify patterns and associations in data.
+
+**Types of Correlation:**
+
+- **Positive Correlation:** Both variables increase or decrease together (e.g., house size and price).
+- **Negative Correlation:** One variable increases while the other decreases (e.g., distance from city center and house price).
+#Understanding correlation among featues
+```python
+correlation = dataframe.corr()
+```
+### 🔥 Heatmap
+
+A heatmap is a graphical representation of data where individual values in a matrix are represented as colors. In correlation analysis, heatmaps help visualize the strength and direction of relationships between multiple variables at once, making it easier to spot strong positive or negative correlations.
+#Plotting Heatmap to see the correlation
+```python
+import seaborn as sns
+plt.figure(figsize=(6,6))
+sns.heatmap(correlation,cbar=True,fmt='.1f',square=True,annot=True,annot_kws={'size':8},cmap='Blues')
+```
