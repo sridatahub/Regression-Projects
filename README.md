@@ -163,11 +163,16 @@ print("Testing Mean Absolute error:", mae_test)
 ```
 ### 📊 Results
 
-**Training Accuracy (R² Score):** 
-0.9437  
-Mean Absolute Error: 0.1934
+**Training Accuracy (R² Score):** 0.9437  
+**Mean Absolute Error:** 0.1934
 
-**Testing Accuracy (R² Score):**  
-0.8338  
-Mean Absolute Error: 0.3109
+**Testing Accuracy (R² Score):** 0.8338  
+**Mean Absolute Error:** 0.3109
+Overall, the model performs quite well in predicting house prices with good accuracy on both training and testing data.
+
+
+
+
+
+
 
