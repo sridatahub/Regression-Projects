@@ -113,18 +113,67 @@ sns.heatmap(correlation,cbar=True,fmt='.1f',square=True,annot=True,annot_kws={'s
 # Separating features and target label
 features = dataframe.drop(['Houseprice'], axis=1)
 label = dataframe['Houseprice']
-
 print(features)
 print(label)
 
 # Splitting the data into training and testing sets
 from sklearn.model_selection import train_test_split
 
-X_train, x_test, Y_train, y_test = train_test_split(
-    features, label, test_size=0.2, random_state=2
-)
-
+# Splitting the dataset into 80% training and 20% testing data to evaluate model performance on unseen data
+X_train, x_test, Y_train, y_test = train_test_split(features, label, test_size=0.2, random_state=2)
 print(features.shape, X_train.shape, x_test.shape)
 print(label.shape, Y_train.shape, y_test.shape)
 ```
+### 🤖 Model Training & Evaluation
 
+```python
+from xgboost import XGBRegressor
+from sklearn import metrics
+import matplotlib.pyplot as plt
+
+# Initialize the model
+model = XGBRegressor()
+
+# Train the model on training data
+model.fit(X_train, Y_train)
+
+# Predict on training data
+training_data_prediction = model.predict(X_train)
+# Calculate evaluation metrics
+r_score = metrics.r2_score(Y_train, training_data_prediction)
+mae = metrics.mean_absolute_error(Y_train, training_data_prediction)
+
+print("Training R Square error:", r_score)
+print("Training Mean Absolute error:", mae)
+
+# Visualization: Actual vs Predicted Prices (Training Data)
+plt.scatter(Y_train, training_data_prediction)
+plt.xlabel("Actual Prices")
+plt.ylabel("Predicted Prices")
+plt.title("Training Data: Actual vs Predicted Prices")
+plt.show()
+
+test_data_prediction = model.predict(x_test)
+
+r_score_test = metrics.r2_score(y_test, test_data_prediction)
+mae_test = metrics.mean_absolute_error(y_test, test_data_prediction)
+
+print("Testing R Square error:", r_score_test)
+print("Testing Mean Absolute error:", mae_test)
+
+### 📊 Results
+
+```python
+# Training Accuracy (R² Score): Measures how well the model fits the training data
+print("Training R Square error: 0.943650140819218")
+print("Training Mean Absolute error: 0.1933648700612105")
+
+# Testing Accuracy (R² Score): Measures how well the model generalizes to unseen data
+from sklearn import metrics
+
+r_score = metrics.r2_score(y_test, test_data_prediction)
+mae = metrics.mean_absolute_error(y_test, test_data_prediction)
+
+print("Testing R Square error:", r_score)
+print("Testing Mean Absolute error:", mae)
+```
