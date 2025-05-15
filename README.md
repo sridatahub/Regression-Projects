@@ -62,24 +62,27 @@ from sklearn.datasets import fetch_california_housing
 dataset = fetch_california_housing()
 dataset
 
-### 📥 Creating Pandas Dataframe
+### 📥 Creating Pandas DataFrame
+
+```python
 import pandas as pd
 dataframe = pd.DataFrame(dataset.data, columns=dataset.feature_names)
 dataframe.head()
 
-### 🏷️ Adding Label (Price) to the DataFrame
-
-```python
+#Adding Label (Price) to the DataFrame
 dataframe['Houseprice'] = dataset.target
 dataframe.head()
+
 
 ### 🔍 Data Exploration
 
 ```python
 # Checking the number of rows and columns in the DataFrame
-dataframe.shape
+print(dataframe.shape)
+
 # Checking for missing values
-dataframe.isnull().sum()
+print(dataframe.isnull().sum())
+
 # Looking at statistical measures of the dataset
-dataframe.describe()
+print(dataframe.describe())
 
